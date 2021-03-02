@@ -69,7 +69,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  transition: 0.8s ease-in;
+  transition: 1.2s ease-in;
 }
 .card--mercury .planet__atmosphere {
   box-shadow: inset 10px 0px 12px -2px rgba(255, 255, 255, 0.2),
@@ -294,6 +294,7 @@
 .info__title {
   text-align: center;
   font-size: 28px;
+  margin: 30px;
 }
 .info__form {
   display: flex;
@@ -306,12 +307,15 @@
   margin-bottom: 5px;
   font-size: 14px;
   padding: 0 20px;
+  transition: 0.8s ease-in;
+  transition-delay: 0.3s; 
 }
 .info__item .tilt__icon {
   margin: 0 5px;
 }
 .info__label {
   font-size: 11px;
+  color: var(--prime)
 }
 .info__line {
   flex: 1;
@@ -334,6 +338,14 @@ p {
     padding: 20px 0;
     justify-content: center;
     margin: 100px auto;
+}
+
+.show {
+    opacity: 1
+}
+
+.hide {
+    opacity: 0
 }
 
 </style>
@@ -375,22 +387,22 @@ let planetsInfo = [
           <label class="info__label">tilt</label><span class="info__line"></span
           ><i class=" tilt__icon fas fa-long-arrow-alt-right"></i><span
             class="info__detail"
-            >{tilt}
+            >{tilt}&#176;
           </span>
         </div>
         <div class="info__item">
           <label class="info__label">day</label><span class="info__line"></span
-          ><span class="info__detail">{day}</span>
+          ><span class="info__detail">{day} hours</span>
         </div>
         <div class="info__item">
           <label class="info__label">year</label><span class="info__line"></span
-          ><span class="info__detail">{year}</span>
+          ><span class="info__detail">{year} days</span>
         </div>
       </div>
     </div>
   </article>
   <article>
-    <div class="info__item">
+    <div class={`info__item ${intersecting ? 'show' : 'hide'} `}>
       <p>
       {text}
       </p>

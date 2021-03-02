@@ -1,3 +1,52 @@
+<style>
+#data a {
+  color: var(--text);
+  display: block;
+  position: relative;
+  text-decoration: none;
+  margin-bottom: 1px;
+  padding: 6px 10px;
+  font-size: 18px;
+}
+
+#data a:hover {
+  color: var(--second);
+}
+
+#data a.active {
+  color: var(--prime);
+}
+
+#data {
+  z-index: 99;
+  position: fixed;
+  opacity: 1;
+  top: 16px;
+  padding: 16px;
+}
+
+@media screen and (min-width: 1000px) {
+  #data {
+    background: transparent;
+  }
+
+  #data {
+    position: absolute;
+    top: inherit;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+  }
+
+  #data a {
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    padding: 15px 15px;
+  }
+}
+</style>
+
 <script lang="ts">
 export let choosenPlanet: string;
 export let handlePlanet;

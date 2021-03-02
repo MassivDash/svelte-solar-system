@@ -33,6 +33,9 @@ $: universeClass = scaleClass(scale);
                 class="{`planet ${
                   choosenPlanet === planet ? '' : 'grey-filter'
                 }`}">
+                {#if planet === "saturn"}
+                  <div class="ring"></div>
+                {/if}
                 <dl class="infos">
                   <dt>{planet}</dt>
                   <dd><span></span></dd>

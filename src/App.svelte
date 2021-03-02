@@ -3,6 +3,8 @@ import Navbar from "./components/navbar.svelte";
 import Planets from "./components/planets.svelte";
 import Controls from "./components/controls.svelte";
 import Universe from "./components/universe.svelte";
+import SolarInfo from "./components/solarInfo.svelte";
+import Logo from "./components/UI/logo.svelte";
 
 import { onMount } from "svelte";
 let showUi = false;
@@ -45,10 +47,11 @@ $: bodyClass = `${!showUi ? "hide-UI" : "set-speed"} ${
   threeD ? "view-3D" : "view-2D opening "
 } ${!zoom ? "zoom-large" : "zoom-close"} ${data ? "data-open" : "data-close"} ${
   controls ? "controls-open" : "controls-close"
-}`;
+} container`;
 </script>
 
 <div class="{bodyClass}">
+  <Logo />
   <Navbar handleData="{handleData}" handleControls="{handleControls}" />
   <Planets
     choosenPlanet="{choosenPlanet}"
@@ -66,3 +69,4 @@ $: bodyClass = `${!showUi ? "hide-UI" : "set-speed"} ${
     scale="{scale}"
     planets="{planets}" />
 </div>
+<SolarInfo />

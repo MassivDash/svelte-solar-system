@@ -19,10 +19,11 @@
 
 #data {
   z-index: 99;
-  position: fixed;
+  position: absolute;
   opacity: 1;
-  top: 16px;
+  bottom: 30px;
   padding: 16px;
+  transition: 0.7s ease-in-out;
 }
 
 @media screen and (min-width: 1000px) {

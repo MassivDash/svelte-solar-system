@@ -14,8 +14,9 @@
   z-index: 99;
   position: absolute;
   opacity: 1;
-  top: 49px;
+  bottom: 26px;
   padding: 16px;
+  transition: 0.7s ease-in-out;
 }
 
 #controls label {
@@ -80,11 +81,6 @@
   transform-origin: 15px 5px;
 }
 
-#controls {
-  padding-right: 32px;
-  top: 12px;
-}
-
 @keyframes simpleRot {
   from {
     transform: rotate(0deg);
@@ -101,6 +97,18 @@
   padding: 20px 5px 5px;
   border-radius: 25px;
   background: linear-gradient(to bottom, #e5e4e4 1%, #f1f1f1 100%);
+}
+
+@media screen and (min-width: 1000px) {
+  #controls {
+    padding-right: 32px;
+    top: 12px;
+    z-index: 99;
+    position: absolute;
+    opacity: 1;
+    top: 49px;
+    padding: 16px;
+  }
 }
 </style>
 

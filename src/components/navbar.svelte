@@ -2,7 +2,7 @@
 #navbar {
   z-index: 99;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   padding: 16px;
   width: 100%;
@@ -41,8 +41,7 @@ export let handleControls: (value) => void;
 </script>
 
 <div id="navbar">
-  <a id="toggle-data" href="#data" on:click="{handleData}"
-    ><i class="icon-data"></i>Data</a>
-  <a id="toggle-controls" href="#controls" on:click="{handleControls}"
+  <a id="toggle-data" on:click="{handleData}"><i class="icon-data"></i>Data</a>
+  <a id="toggle-controls" on:click="{handleControls}"
     ><i class="icon-controls"></i>Controls</a>
 </div>

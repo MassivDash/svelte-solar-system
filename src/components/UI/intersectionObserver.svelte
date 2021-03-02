@@ -13,6 +13,7 @@ export let top = 0;
 export let bottom = 0;
 export let left = 0;
 export let right = 0;
+export let className;
 
 let intersecting = false;
 let container;
@@ -55,6 +56,6 @@ onMount(() => {
 });
 </script>
 
-<div bind:this="{container}">
+<div class="{className}" bind:this="{container}">
   <slot intersecting="{intersecting}" />
 </div>

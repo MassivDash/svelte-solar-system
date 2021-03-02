@@ -1,7 +1,7 @@
 <script lang="ts">
     export let choosenPlanet: string;
     export let handlePlanet;
-    const planets = ['sun', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune' ]
+    export let planets;
 
 </script>
 

@@ -13,6 +13,8 @@ let data = false;
 let scale = "speed";
 let choosenPlanet = 'earth';
 
+const planets = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'sun' ]
+
 onMount(() => {
   const interval = setTimeout(() => {
     showUi = true;
@@ -37,14 +39,14 @@ $: bodyClass = `${!showUi ? "hide-UI" : "set-speed"} ${
 </script>
 
 <div class="{bodyClass}">
-  <Navbar handleData="{handleData}" handleControls="{handleControls}" />
-  <Planets choosenPlanet={choosenPlanet} handlePlanet={handlePlanet} />
+  <Navbar {handleData} {handleControls} />
+  <Planets {choosenPlanet} {handlePlanet} {planets} />
   <Controls
-    scale="{scale}"
-    handleScale="{handleScale}"
-    handleZoom="{handleZoom}"
-    zoom="{zoom}"
-    threeD="{threeD}"
-    handle3D="{handle3D}" />
-  <Universe choosenPlanet={choosenPlanet} scale="{scale}" />
+    {scale}
+    {handleScale}
+    {handleZoom}
+    {zoom}
+    {threeD}
+    {handle3D} />
+  <Universe {choosenPlanet} {scale} {planets}/>
 </div>

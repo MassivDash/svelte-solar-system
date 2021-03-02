@@ -76,19 +76,25 @@
   border-radius: 10px;
   background: var(--prime);
   z-index: 99;
-  
+  animation: simpleRot 10s linear infinite;
+  transform-origin: 15px 5px;
 }
 
 #controls {
   padding-right: 32px;
-  top: 12px;
+  top: 12px; 
+}
+
+@keyframes simpleRot {
+  from {transform: rotate(0deg)}
+  to {transform: rotate(359deg)}
 }
 
 .radio {
   box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.3), inset 0 0 0 1px #d6d6d6,
     0 2px 0 0 white;
     background: #e5e4e4;
-    padding: 5px 5px;
+    padding: 20px 5px 5px;
     border-radius: 25px;
     background: linear-gradient(to bottom, #e5e4e4 1%, #f1f1f1 100%);
 }

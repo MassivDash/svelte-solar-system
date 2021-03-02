@@ -4,6 +4,7 @@ import Planets from "./components/planets.svelte";
 import Controls from "./components/controls.svelte";
 import Universe from "./components/universe.svelte";
 import SolarInfo from "./components/solarInfo.svelte";
+import PlanetsInfo from "./components/planetsInfo.svelte";
 import Logo from "./components/UI/logo.svelte";
 
 import { onMount } from "svelte";
@@ -71,3 +72,4 @@ $: bodyClass = `${!showUi ? "hide-UI" : "set-speed"} ${
     planets="{planets}" />
 </div>
 <SolarInfo />
+<PlanetsInfo />

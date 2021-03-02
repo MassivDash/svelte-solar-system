@@ -1,4 +1,5 @@
-<div>
+<div class="flex-holder">
+  <div class="text-container">
   <h3>Birth of the Solar System</h3>
   <p>
     Our solar system began as part of a massive nebula cloud of molecular
@@ -18,3 +19,31 @@
     and other objects in our solar system.
   </p>
 </div>
+</div>
+
+<style>
+.flex-holder {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 50px;
+}
+
+h3 {
+  font-size: 25px;
+  margin: 15px 0;
+  line-height: 1.7;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.text-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+</style>

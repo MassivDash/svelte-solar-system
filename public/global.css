@@ -227,6 +227,7 @@ body {
   animation-name: invert;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  cursor: pointer;
 }
 
 #sun,
@@ -1562,8 +1563,6 @@ h1 span,
   background: rgba(0, 0, 0, 0.4);
 }
 
-
-
 #toggle-data {
   left: 0;
 }
@@ -1571,7 +1570,6 @@ h1 span,
 #toggle-controls {
   right: 0;
 }
-
 
 .data-close #data {
   left: -100%;
@@ -1791,7 +1789,6 @@ body {
   #controls {
     background: transparent;
   }
-
 
   h1 {
     font-size: 22px;

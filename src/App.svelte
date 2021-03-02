@@ -65,6 +65,7 @@ $: bodyClass = `${!showUi ? "hide-UI" : "set-speed"} ${
     threeD="{threeD}"
     handle3D="{handle3D}" />
   <Universe
+    {handlePlanet}
     choosenPlanet="{choosenPlanet}"
     scale="{scale}"
     planets="{planets}" />

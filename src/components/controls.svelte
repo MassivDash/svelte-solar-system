@@ -20,8 +20,10 @@
 
 #controls label {
   opacity: 0.6;
-  height: 24px;
+  height: 16px;
   margin-bottom: 28px;
+  margin-left: -30px;
+  cursor: pointer;
 }
 
 #controls label:hover {
@@ -31,8 +33,8 @@
 #controls label:before {
   position: absolute;
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 12px;
+  height: 12px;
   margin-top: 3px;
   text-align: center;
   color: var(--text);
@@ -43,7 +45,7 @@
   display: block;
   margin-left: 36px;
   padding-top: 4px;
-  font-size: 18px;
+  font-size: 15px;
   color: var(--text);
 }
 
@@ -56,9 +58,10 @@
   content: "";
   display: block;
   position: absolute;
-  width: 22px;
-  height: 22px;
-  border: 2px solid var(--text);
+  margin-left: -35px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--text);
   border-radius: 16px;
 }
 
@@ -66,19 +69,28 @@
   content: "";
   display: block;
   top: 3px;
-  margin-left: 3px;
+  margin-left: -39px;
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 13px;
+  height: 13px;
   border-radius: 10px;
-  background: var(--text);
+  background: var(--prime);
   z-index: 99;
+  
 }
-
 
 #controls {
   padding-right: 32px;
   top: 12px;
+}
+
+.radio {
+  box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.3), inset 0 0 0 1px #d6d6d6,
+    0 2px 0 0 white;
+    background: #e5e4e4;
+    padding: 5px 5px;
+    border-radius: 25px;
+    background: linear-gradient(to bottom, #e5e4e4 1%, #f1f1f1 100%);
 }
 </style>
 
@@ -90,13 +102,22 @@ export let zoom;
 export let scale;
 export let handleScale;
 
-import Checkbox from './UI/checkbox.svelte';
+import Checkbox from "./UI/checkbox.svelte";
 </script>
 
 <div id="controls">
-    <Checkbox handleCheckbox={handle3D} boolean={threeD} textOne="3D" textTwo="2D" />
-    <Checkbox handleCheckbox={handleZoom} boolean={zoom} textOne="+" textTwo="-" />
-  <label>
+  <Checkbox
+    handleCheckbox="{handle3D}"
+    boolean="{threeD}"
+    textOne="3D"
+    textTwo="2D" />
+  <Checkbox
+    handleCheckbox="{handleZoom}"
+    boolean="{zoom}"
+    textOne="+"
+    textTwo="-" />
+  <div class="radio">
+    <label>
     <input
       type="radio"
       class="set-speed"
@@ -123,4 +144,5 @@ import Checkbox from './UI/checkbox.svelte';
       checked="{scale === 'distance'}" />
     <span>distance</span>
   </label>
+</div>
 </div>

@@ -2,6 +2,7 @@
 export let scale: string;
 export let choosenPlanet: string;
 export let planets: string[];
+export let handlePlanet;
 
 const scaleClass = (scale) => {
   if (scale === "speed") {
@@ -27,8 +28,8 @@ $: universeClass = scaleClass(scale);
     <div id="solar-system" class="{choosenPlanet}">
       {#each planets as planet, i}
         {#if planet !== "sun"}
-          <div id="{planet}" class="orbit">
-            <div class="pos">
+          <div id="{planet}" class="orbit" >
+            <div class="pos" on:click="{() => handlePlanet(planet)}" title={planet}>
               <div
                 class="{`planet ${
                   choosenPlanet === planet ? '' : 'grey-filter'

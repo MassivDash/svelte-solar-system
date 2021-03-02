@@ -75,35 +75,6 @@
   z-index: 99;
 }
 
-#controls input[type="checkbox"]:before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100px;
-  height: 22px;
-  border: 2px solid var(--text);
-  border-radius: 16px;
-}
-
-#controls input[type="checkbox"]:after {
-  content: "";
-  display: block;
-  top: 3px;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  background: var(--text);
-  z-index: 99;
-}
-
-#controls label.set-view:before {
-  font: bold small-caps 11px/20px sans-serif;
-}
-
-#controls label.set-zoom:before {
-  font: normal small-caps 18px/14px sans-serif;
-}
 
 #controls {
   padding-right: 32px;
@@ -118,15 +89,13 @@ export let handleZoom;
 export let zoom;
 export let scale;
 export let handleScale;
+
+import Checkbox from './UI/checkbox.svelte';
 </script>
 
 <div id="controls">
-  <label class="set-view">
-    <input type="checkbox" bind:checked="{threeD}" on:change="{handle3D}" />
-  </label>
-  <label class="set-zoom">
-    <input type="checkbox" bind:checked="{zoom}" on:change="{handleZoom}" />
-  </label>
+    <Checkbox handleCheckbox={handle3D} boolean={threeD} textOne="3D" textTwo="2D" />
+    <Checkbox handleCheckbox={handleZoom} boolean={zoom} textOne="+" textTwo="-" />
   <label>
     <input
       type="radio"

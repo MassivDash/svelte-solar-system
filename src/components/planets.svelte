@@ -50,7 +50,7 @@
 <script lang="ts">
 export let choosenPlanet: string;
 export let handlePlanet;
-export let planets;
+export let planets: string[];
 </script>
 
 <div id="data">

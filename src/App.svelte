@@ -11,9 +11,19 @@ let threeD = false;
 let controls = false;
 let data = false;
 let scale = "speed";
-let choosenPlanet = 'earth';
+let choosenPlanet = "sun";
 
-const planets = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'sun' ]
+const planets = [
+  "sun",
+  "mercury",
+  "venus",
+  "earth",
+  "mars",
+  "jupiter",
+  "saturn",
+  "uranus",
+  "neptune",
+];
 
 onMount(() => {
   const interval = setTimeout(() => {
@@ -29,7 +39,7 @@ const handleControls = () => (controls = !controls);
 const handleZoom = () => (zoom = !zoom);
 const handle3D = () => (threeD = !threeD);
 const handleScale = (value) => (scale = value);
-const handlePlanet = (value) => choosenPlanet = value;
+const handlePlanet = (value) => (choosenPlanet = value);
 
 $: bodyClass = `${!showUi ? "hide-UI" : "set-speed"} ${
   threeD ? "view-3D" : "view-2D opening "
@@ -39,14 +49,20 @@ $: bodyClass = `${!showUi ? "hide-UI" : "set-speed"} ${
 </script>
 
 <div class="{bodyClass}">
-  <Navbar {handleData} {handleControls} />
-  <Planets {choosenPlanet} {handlePlanet} {planets} />
+  <Navbar handleData="{handleData}" handleControls="{handleControls}" />
+  <Planets
+    choosenPlanet="{choosenPlanet}"
+    handlePlanet="{handlePlanet}"
+    planets="{planets}" />
   <Controls
-    {scale}
-    {handleScale}
-    {handleZoom}
-    {zoom}
-    {threeD}
-    {handle3D} />
-  <Universe {choosenPlanet} {scale} {planets}/>
+    scale="{scale}"
+    handleScale="{handleScale}"
+    handleZoom="{handleZoom}"
+    zoom="{zoom}"
+    threeD="{threeD}"
+    handle3D="{handle3D}" />
+  <Universe
+    choosenPlanet="{choosenPlanet}"
+    scale="{scale}"
+    planets="{planets}" />
 </div>

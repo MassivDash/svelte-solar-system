@@ -146,6 +146,10 @@ body {
   background-color: #08090a;
 }
 
+.grey-filter {
+  filter: grayscale(100%);
+}
+
 #universe {
   z-index: 1;
   position: absolute;
@@ -1820,7 +1824,7 @@ h1 {
 
 /* --------------------------------------------------------------------------- images */
 body {
-  background-image: url(./dark_wall.png)
+  background-image: url(./dark_wall.png);
 }
 
 /* #universe {

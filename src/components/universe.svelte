@@ -24,29 +24,34 @@ $: universeClass = scaleClass(scale);
 
 <div id="universe" class="{universeClass}">
   <div id="galaxy">
-    <div id="solar-system" class={choosenPlanet}>
+    <div id="solar-system" class="{choosenPlanet}">
       {#each planets as planet, i}
-      {#if planet !== 'sun'}
-      <div id={planet} class="orbit">
-        <div class="pos">
-          <div class="planet">
+        {#if planet !== "sun"}
+          <div id="{planet}" class="orbit">
+            <div class="pos">
+              <div
+                class="{`planet ${
+                  choosenPlanet === planet ? '' : 'grey-filter'
+                }`}">
+                <dl class="infos">
+                  <dt>{planet}</dt>
+                  <dd><span></span></dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        {/if}
+        {#if planet === "sun"}
+          <div
+            id="{planet}"
+            class="{`${choosenPlanet === planet ? '' : 'grey-filter'}`}">
             <dl class="infos">
               <dt>{planet}</dt>
               <dd><span></span></dd>
             </dl>
           </div>
-        </div>
-      </div>
-      {/if}
-      {#if planet === 'sun'}
-      <div id={planet}>
-        <dl class="infos">
-          <dt>{planet}</dt>
-          <dd><span></span></dd>
-        </dl>
-      </div>
-      {/if}
+        {/if}
       {/each}
-
+    </div>
   </div>
 </div>

@@ -5,6 +5,7 @@ import Controls from "./components/controls.svelte";
 import Universe from "./components/universe.svelte";
 import SolarInfo from "./components/solarInfo.svelte";
 import PlanetsInfo from "./components/planetsInfo.svelte";
+import Footer from "./components/footer.svelte";
 import Logo from "./components/UI/logo.svelte";
 
 import { onMount } from "svelte";
@@ -66,10 +67,11 @@ $: bodyClass = `${!showUi ? "hide-UI" : "set-speed"} ${
     threeD="{threeD}"
     handle3D="{handle3D}" />
   <Universe
-    {handlePlanet}
+    handlePlanet="{handlePlanet}"
     choosenPlanet="{choosenPlanet}"
     scale="{scale}"
     planets="{planets}" />
 </div>
 <SolarInfo />
 <PlanetsInfo />
+<Footer />

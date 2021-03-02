@@ -51,7 +51,6 @@ label[for="+"] > span {
   line-height: 75%;
 }
 
-
 .handler {
   position: absolute;
   top: 0;

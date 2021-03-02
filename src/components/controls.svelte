@@ -82,21 +82,25 @@
 
 #controls {
   padding-right: 32px;
-  top: 12px; 
+  top: 12px;
 }
 
 @keyframes simpleRot {
-  from {transform: rotate(0deg)}
-  to {transform: rotate(359deg)}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 
 .radio {
   box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.3), inset 0 0 0 1px #d6d6d6,
     0 2px 0 0 white;
-    background: #e5e4e4;
-    padding: 20px 5px 5px;
-    border-radius: 25px;
-    background: linear-gradient(to bottom, #e5e4e4 1%, #f1f1f1 100%);
+  background: #e5e4e4;
+  padding: 20px 5px 5px;
+  border-radius: 25px;
+  background: linear-gradient(to bottom, #e5e4e4 1%, #f1f1f1 100%);
 }
 </style>
 
@@ -124,31 +128,31 @@ import Checkbox from "./UI/checkbox.svelte";
     textTwo="-" />
   <div class="radio">
     <label>
-    <input
-      type="radio"
-      class="set-speed"
-      name="scale"
-      on:change="{() => handleScale('speed')}"
-      checked="{scale === 'speed'}" />
-    <span>speed</span>
-  </label>
-  <label>
-    <input
-      type="radio"
-      class="set-size"
-      name="scale"
-      on:change="{handleScale('size')}"
-      checked="{scale === 'size'}" />
-    <span>size</span>
-  </label>
-  <label>
-    <input
-      type="radio"
-      class="set-distance"
-      name="scale"
-      on:change="{handleScale('distance')}"
-      checked="{scale === 'distance'}" />
-    <span>distance</span>
-  </label>
-</div>
+      <input
+        type="radio"
+        class="set-speed"
+        name="scale"
+        on:change="{() => handleScale('speed')}"
+        checked="{scale === 'speed'}" />
+      <span>speed</span>
+    </label>
+    <label>
+      <input
+        type="radio"
+        class="set-size"
+        name="scale"
+        on:change="{handleScale('size')}"
+        checked="{scale === 'size'}" />
+      <span>size</span>
+    </label>
+    <label>
+      <input
+        type="radio"
+        class="set-distance"
+        name="scale"
+        on:change="{handleScale('distance')}"
+        checked="{scale === 'distance'}" />
+      <span>distance</span>
+    </label>
+  </div>
 </div>

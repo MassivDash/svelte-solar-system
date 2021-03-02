@@ -28,8 +28,11 @@ $: universeClass = scaleClass(scale);
     <div id="solar-system" class="{choosenPlanet}">
       {#each planets as planet, i}
         {#if planet !== "sun"}
-          <div id="{planet}" class="orbit" >
-            <div class="pos" on:click="{() => handlePlanet(planet)}" title={planet}>
+          <div id="{planet}" class="orbit">
+            <div
+              class="pos"
+              on:click="{() => handlePlanet(planet)}"
+              title="{planet}">
               <div
                 class="{`planet ${
                   choosenPlanet === planet ? '' : 'grey-filter'

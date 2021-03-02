@@ -147,7 +147,7 @@ table {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   box-sizing: border-box;
-  transition: 0.3 ease-in-out;
+  transition: 0.6s ease-in;
 }
 
 body {
